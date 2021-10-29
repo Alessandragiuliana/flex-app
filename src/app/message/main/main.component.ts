@@ -12,7 +12,7 @@ export class MainComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   showNavView : boolean = false;
   small: boolean = false;
-  opened: boolean = false;
+  opened: boolean = true;
 
   constructor( private service: BreakpointObserver) {
     const changes = this.service.observe(['(max-width: 726px)']);
@@ -20,6 +20,8 @@ export class MainComponent implements OnInit, OnDestroy {
       (value) => {
         this.small = value.matches;
         if (!this.small) {
+          this.opened = true;
+        } else {
           this.opened = false;
         }
       }

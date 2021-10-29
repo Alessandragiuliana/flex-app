@@ -7,17 +7,26 @@
     padding: 0;
     height: 100%;
     
-
     .aside{
         display: flex;
         flex-direction: column;
         flex: 0 0 290px;
         order:1;
+        
+        
+        height: 100%;
+        background-color: whitesmoke;  
+       
          
         &.hide-aside{
             display: none;
         }
-    
+
+        &.aside-n{
+            flex-basis: 100px !important;
+        }
+           
+
         .navbar{
             display: flex;
             justify-content: space-between;
@@ -101,10 +110,8 @@
                 display: flex;
                 align-items: center;
                 flex: 0 0 auto;
-                
-            }
-            
-        
+                position: absolute;
+           }
             .name{
             display: flex;
             justify-content: center;
@@ -122,12 +129,11 @@
             overflow: hidden; 
             
             .content-msg{
-                margin:10px;
                 font-family: sans-serif;
                 letter-spacing: 0.5px;
                 overflow-y: auto;
                 height: 100%; 
-                flex: 1 1 auto;
+                
                 
             }
         }
@@ -141,6 +147,7 @@
 
 }
 
+
 .overlay{
     position: fixed;
     width: 100%;
@@ -149,46 +156,4 @@
     left: 0;
     z-index: 10;
     background: rgba(0, 0, 0, 0.7) ;
-
-    
-&.hide-aside-d{
-    display: none;
-   }
 }
-
-.nav-web{
-    position: absolute;
-    margin: 0;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 200px;
-
-    .navbar-web{
-        background: black;
-        color: honeydew;
-        height: 30px;
-        text-align: center;
-    }
-    .tab-bar-web{
-        display: flex;
-        background-color: greenyellow;
-        height: 30px;
-        justify-content: center;
-        align-items: center;
-       }
-       .content-list-web{
-        display: flex;
-        flex: 1 1 auto;
-        background-color: hotpink;
-        flex-direction: column ;
-        overflow: hidden;
-        padding: 15px;
-
-        .list-web{
-          overflow: auto;
-        }
-    }
-}
-

@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="aside" [class.hide-aside]="small">
-        
+    <div  class="aside" [ngClass]="{'hide-aside':!opened && small, 'aside-n': small }">
         <div class="navbar">
-            <button mat-button class="menu-button">
-                <mat-icon class="icon">person</mat-icon>
+            <button mat-button class="menu-button" (click)="onClick()">
+                <mat-icon class="icon" *ngIf="!small">person</mat-icon>
+                <mat-icon class="icon" *ngIf="small && !opened" >close</mat-icon>
             </button>
             <h2 class="title">Truechat</h2>
             <img src="https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg" alt="">
@@ -22,6 +22,11 @@
                     <li>sei</li>
                     <li>sette</li>
                     <li>otto</li>
+                    <li>quattro</li>
+                    <li>cinque</li>
+                    <li>sei</li>
+                    <li>sette</li>
+                    <li>otto</li>
                 </ol>
             </div>
         </div>
@@ -29,15 +34,13 @@
     <div class="content">
         <div class="nav2">
         <div style="display:flex; align-items:center;justify-content:center; margin:10px; flex: 0 0 auto" >
-            <button  mat-mini-fab *ngIf="small" (click)="onClick()">
+            <button  mat-mini-fab *ngIf="small && !opened" (click)="onClick()">
                 <mat-icon  >
                     menu
-                </mat-icon >
-               
-                
+                </mat-icon >        
             </button> 
         </div>
-            <div class="name"> Alessandra Giuliana </div>
+            <div class="name"  [ngStyle]="{'font-style': small ? 'italic':'normal'} "> Alessandra Giuliana </div>
         </div>
 
         <div class="content-container">
