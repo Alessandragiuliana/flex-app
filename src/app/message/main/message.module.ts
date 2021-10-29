@@ -13,7 +13,7 @@ import { MatIconModule } from "@angular/material/icon";
       CommonModule,
       LayoutModule,
       MatButtonModule,
-      MatIconModule
+      MatIconModule,
     ]
   })
   export class MessageModule { }

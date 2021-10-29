@@ -19,29 +19,66 @@
         }
     
         .navbar{
+            display: flex;
+            justify-content: space-between;
             background-color: black;
             color: honeydew;
-            text-align: center;
             height: 57px;
             flex: 0 0 auto;
+
+            img{
+                border-radius: 50%;
+                height: 50px;
+                width: 50px;
+                object-fit: cover;
+                margin: 3px;
+            }
+            .title{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex: 0 0 auto;
+                height: 57px;
+                color: rgb(147, 184, 74);
+            }
         }
 
         .tab-bar {
             display: flex;
-            background-color: greenyellow;
+            background-color: whitesmoke;
             height: 57px;
-            justify-content: center;
+            justify-content:center;
             align-items: center;
             flex: 0 0 auto;
+
+            .input{
+                border-radius: 15px;
+                padding: 6px;
+                margin: 3px;
+                height: 25px;
+                width: 170px;
+                text-align: center;
+            }
+
            
         }
         .content-list{
             display: flex;
             flex: 1 1 auto;
-            background-color: hotpink;
+            background-color: rgba(245, 245, 245, 0.322);
             flex-direction: column ;
             overflow: hidden;
             flex: 1 1 auto;
+            ol{
+                font-size: 1rem;
+                font-family: sans-serif;
+                letter-spacing: 2px;
+                list-style: none;
+
+                li{
+                    padding: 5px;
+                }
+             }
         
             .list{
                 overflow-y: auto;
@@ -59,31 +96,24 @@
             display: flex;
             height: 57px;
             background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            .button-conteiner{
+                display: flex;
+                align-items: center;
+                flex: 0 0 auto;
+                
+            }
             
-            
-        .name-t{
+        
+            .name{
             display: flex;
             justify-content: center;
             align-items: center;
-            .name{
+            flex: 1 1 auto;
             font-size: 1.5rem;
-            margin: 10px;
-            
+            font-family: sans-serif;
             } 
-        }   
-
-        .btn-t{
-            display: flex;
-            justify-content:flex-start;
-            align-items: center;
-            .btn{
-               border-radius: 50%;
-               color: black;
-               height: 2rem;
-               width: 2rem;
-               margin: 5px;
-            } 
-        }   
+         
     }
         .content-container{
             display: flex;
@@ -161,3 +191,4 @@
         }
     }
 }
+

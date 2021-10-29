@@ -2,38 +2,41 @@
     <div class="aside" [class.hide-aside]="small">
         
         <div class="navbar">
-            <h2>Truechat</h2>
+            <button mat-button class="menu-button">
+                <mat-icon class="icon">person</mat-icon>
+            </button>
+            <h2 class="title">Truechat</h2>
+            <img src="https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg" alt="">
         </div>
-        <div class="tab-bar">TabBar</div>
+        <div class="tab-bar">
+           <input  class="input" type="text" placeholder="Search...">
+        </div>
         <div class="content-list">
             <div class="list">
-                <p>tor vitae, viverra ut nisi.
-
-                    Maecenas tempus orci non purus varius, vitae sagittis massa dapibus. Interdum et malesuada fames ac
-                    ante ipsum primis in faucibus. Proin dictum sollicitudin tortor, vitae feugiat enim volutpat
-                    sagittis. Nullam placerat pretium odio eget lacinia. Etiam dictum lacus eget sagittis cursus. Morbi
-                    euismod justo at est fringilla, quis suscipit lorem fringilla. Phasellus quis posuere nibh, vel
-                    dictum velit. Phasellus vehicula enim non lacus euismod, et gravida arcu egestas. Phasellus mi
-                    magna, posuere sed egestas at, venenatis eget nunc. Aenean pulvinar nisl a velit blandit tincidunt.
-                    Curabitur eu fermentum tortor. Nulla facilisi. Curabitur vitae massa ac dolor feugiat dapibus sed
-                    eget enim. Vivamus lacinia orci turpis, tempor porttitor nulla malesuada in. Integer semper neque at
-                    pharetra interdum. In finibus enim condimentum purus interdum, vel dapibus risus efficitur.
-                    Maecenas tempus orci non purus varius, vitae sagittis massa dapibus. Interdum et malesuada fames ac
-                    ante ipsum primis in faucibus. Proin dictum sollicitudin tortor, vitae feugiat enim volutpat
-                    sagittis. Nullam placerat pretium odio eget lacinia. Etiam dictum lacus eget sagittis cursus. Morbi
-                    euismod justo at est fringilla, quis suscipit lorem fringilla. Phasellus quis posuere nibh, vel
-                    dictum velit. Phasellus vehicula enim non lacus euismod, et gravida arcu egestas. Phasellus mi
-                    magn</p>
+                <ol>
+                    <li>uno</li>
+                    <li>due</li>
+                    <li>tre</li>
+                    <li>quattro</li>
+                    <li>cinque</li>
+                    <li>sei</li>
+                    <li>sette</li>
+                    <li>otto</li>
+                </ol>
             </div>
         </div>
     </div>
     <div class="content">
         <div class="nav2">
-            <div class="btn-t">
-            <button mat-mini-fab *ngIf="small" (click)="onClick()">
-                <mat-icon>menu</mat-icon>
+        <div style="display:flex; align-items:center;justify-content:center; margin:10px; flex: 0 0 auto" >
+            <button  mat-mini-fab *ngIf="small" (click)="onClick()">
+                <mat-icon  >
+                    menu
+                </mat-icon >
+               
+                
             </button> 
-            </div>
+        </div>
             <div class="name"> Alessandra Giuliana </div>
         </div>
 
@@ -75,7 +78,7 @@
         </div>
     </div>
 </div>
-<div class="overlay" [class.hide-aside-d]="!small || !opened" (click)="onClick()">
+<!--<div class="overlay" [class.hide-aside-d]="!small || !opened" (click)="onClick()">
 <div class="nav-web">
     <div class="navbar-web">
         <h2>Truechat</h2>
@@ -109,4 +112,4 @@
 
  <ng-template #xButton>
     <button class="btn">X</button>
-</ng-template> 
+</ng-template> -->
