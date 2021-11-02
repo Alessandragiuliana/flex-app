@@ -15,7 +15,7 @@
         flex: 0 0 290px;
         order:1;
         height: 100%;
-        background-color: whitesmoke;  
+        
            
         &.aside-hidden{
             display: none;
@@ -24,8 +24,7 @@
         &.aside-n{
             flex-basis: 200px !important;
         }
-           
-
+        
         .navbar{
             display: flex;
             justify-content: space-between;
@@ -66,14 +65,11 @@
                 height: 25px;
                 width: 170px;
                 text-align: center;
-            }
-
-           
+            } 
         }
         .content-list{
             display: flex;
             flex: 1 1 auto;
-            background-color: rgba(245, 245, 245, 0.322);
             flex-direction: column ;
             overflow: hidden;
         .scroll{
@@ -136,8 +132,16 @@
         }
     
         .footer{
+            display: flex;
             flex: 0 0 57px;
             background-color: whitesmoke;
+            align-items: center;
+            .footer-search{
+              
+                width: 500px;
+                color: black;
+                
+            }            
         }
     }
 
@@ -164,4 +168,23 @@
    min-width: 0;
 }
 
+.footer-btn {
+    padding: 15px;
+    border: none;
+    background-color: whitesmoke;
+}
+.footer-search{
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+   
+    
+}
 
+.full-widt{
+    width: 500px;
+}
+.form{
+  
+  width: 100%;
+}
