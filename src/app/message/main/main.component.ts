@@ -1,8 +1,8 @@
 import { BreakpointObserver, } from '@angular/cdk/layout';
 import { Component, OnDestroy,OnInit} from '@angular/core';
 import { Subscription } from 'rxjs';
-import { USERS } from '../mock-data';
-import { User } from '../user.model';
+import { MESSAGE, USERS } from '../mock-data';
+import { Messager, User } from '../user.model';
 
 @Component({
   selector: 'app-main',
@@ -12,6 +12,7 @@ import { User } from '../user.model';
 
 export class MainComponent implements OnInit, OnDestroy {
   public users: User[] = USERS.map(user => User.Build(user))
+  public messagers: Messager[] = MESSAGE.map(messager =>Messager.Build(messager))
   private querySubscription: Subscription;
 
   small: boolean = false;

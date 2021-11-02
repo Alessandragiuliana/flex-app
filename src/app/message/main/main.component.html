@@ -21,9 +21,10 @@
         </div>
     </div>
 
+
     <div class="content">
         <div class="nav2">
-            <div style="display:flex; align-items:center;justify-content:center; margin:10px; flex: 0 0 auto">
+            <div style="display:flex; align-items:center;justify-content:center; flex: 0 0 auto">
                 <button mat-mini-fab *ngIf="small && !opened" (click)="toggleAside()">
                     <mat-icon>
                         menu
@@ -32,43 +33,15 @@
             </div>
             <div class="name">
                 <h2>Alessandra Giuliana</h2>
-                <p>Active Now </p>
             </div>
         </div>
 
         <div class="content-container">
-            <div class="content-msg">
-                <p>tor vitae, viverra ut nisi.
-
-                    Maecenas tempus orci non purus varius, vitae sagittis massa dapibus. Interdum et malesuada fames ac
-                    ante ipsum primis in faucibus. Proin dictum sollicitudin tortor, vitae feugiat enim volutpat
-                    sagittis. Nullam placerat pretium odio eget lacinia. Etiam dictum lacus eget sagittis cursus. Morbi
-                    euismod justo at est fringilla, quis suscipit lorem fringilla. Phasellus quis posuere nibh, vel
-                    dictum velit. Phasellus vehicula enim non lacus euismod, et gravida arcu egestas. Phasellus mi
-                    magna, posuere sed egestas at, venenatis eget nunc. Aenean pulvinar nisl a velit blandit tincidunt.
-                    Maecenas tempus orci non purus varius, vitae sagittis massa dapibus. Interdum et malesuada fames ac
-                    ante ipsum primis in faucibus. Proin dictum sollicitudin tortor, vitae feugiat enim volutpat
-                    sagittis. Nullam placerat pretium odio eget lacinia. Etiam dictum lacus eget sagittis cursus. Morbi
-                    eui
-                    Maecenas tempus orci non purus varius, vitae sagittis massa dapibus. Interdum et malesuada fames ac
-                    ante ipsum primis in faucibus. Proin dictum sollicitudin tortor, vitae feugiat enim volutpat
-                    sagittis. Nullam placerat pretium odio eget lacinia. Etiam dictum lacus eget sagittis cursus. Morbi
-                    euismod justo at est fringilla, quis suscipit lorem fringilla. Phasellus quis posuere nibh, vel
-                    dictum velit. Phasellus vehicula enim non lacus euismod, et gravida arcu egestas. Phasellus mi
-                    magna, posuere sed egestas at, venenatis eget nunc. Aenean pulvinar nisl a velit blandit tincidunt.
-                    Maecenas tempus orci non purus varius, vitae sagittis massa dapibus. Interdum et malesuada fames ac
-                    ante ipsum pr
-                    Maecenas tempus orci non purus varius, vitae sagittis massa dapibus. Interdum et malesuada fames ac
-                    ante ipsum primis in faucibus. Proin dictum sollicitudin tortor, vitae feugiat enim volutpat
-                    sagittis. Nullam placerat pretium odio eget lacinia. Etiam dictum lacus eget sagittis cursus. Morbi
-                    euismod justo at est fringilla, quis suscipit lorem fringilla. Phasellus quis posuere nibh, vel
-                    dictum velit. Phasellus vehicula enim non lacus euismod, et gravida arcu egestas. Phasellus mi
-                    magna, posuere sed egestas at, venenatis eget nunc. Aenean pulvinar nisl a velit blandit tincidunt.
-                    Maecenas tempus orci non purus varius, vitae sagittis massa dapibus. Interdum et malesuada fames ac
-                    ante ipsum pr
-                </p>
-            </div>
+                <div *ngFor="let messager of messagers">
+                    <app-user-message [messager]="messager"></app-user-message>
+                </div>
         </div>
+        
         <div class="footer">
             <button class="footer-btn">
                 <span class="material-icons">
@@ -85,11 +58,10 @@
                     add_photo_alternate
                 </span>
             </button>
-            <div class="footer-search" >
-                <mat-form-field  class="full-width "  appearance="fill" style="width: 700px
-                ;">
+            <div class="footer-search">
+                <mat-form-field class="full-width " appearance="fill" style="width: 500px;">
                     <mat-label>Type something</mat-label>
-                    <textarea  matInput placeholder="Ex. It makes me feel..."></textarea>
+                    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
                 </mat-form-field>
             </div>
         </div>

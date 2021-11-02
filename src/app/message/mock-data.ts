@@ -1,4 +1,4 @@
-import { IUser } from "./user.model";
+import { IMessage, IUser } from "./user.model";
 
 export const USERS: IUser[] = [
 {
@@ -50,4 +50,43 @@ export const USERS: IUser[] = [
     message:"Sto tornando dalla Francia..."
 },
 
+]
+
+export const MESSAGE: IMessage[]= [
+{
+    imageUrl:"https://www.romatoday.it/~media/horizontal-hi/7834549861253/gatti-8.jpg" ,
+    message:"Hey there! Can you meet me today?",
+    imageUrlTwo:"https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg",
+    messageTwo:"Sure...when and where?"
+},
+{
+    imageUrl:"https://www.romatoday.it/~media/horizontal-hi/7834549861253/gatti-8.jpg" ,
+    message:"12 PM at the disco",
+    imageUrlTwo:"https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg",
+    messageTwo:"ok"
+},
+{
+    imageUrl:"https://www.romatoday.it/~media/horizontal-hi/7834549861253/gatti-8.jpg" ,
+    message:"Hey there! Can you meet me today?",
+    imageUrlTwo:"https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg",
+    messageTwo:"Sure...when and where?"
+},
+{
+    imageUrl:"https://www.romatoday.it/~media/horizontal-hi/7834549861253/gatti-8.jpg" ,
+    message:"12 PM at the disco",
+    imageUrlTwo:"https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg",
+    messageTwo:"ok"
+},
+{
+    imageUrl:"https://www.romatoday.it/~media/horizontal-hi/7834549861253/gatti-8.jpg" ,
+    message:"Hey there! Can you meet me today?",
+    imageUrlTwo:"https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg",
+    messageTwo:"Sure...when and where?",
+},
+{
+   imageUrl:"https://www.romatoday.it/~media/horizontal-hi/7834549861253/gatti-8.jpg" ,
+   message:"12 PM at the disco",
+   imageUrlTwo:"https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg",
+   messageTwo:"ok"
+},
 ]
