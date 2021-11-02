@@ -1,7 +1,26 @@
-<div class="container">
-    <div class="aside" [ngClass]="{'hide-aside':!opened && small, 'aside-n': small }">
+
+ <!--<div class="main-container" [class.small-layout]="small">
+    <div class="aside-container" [class.aside-hidden]="small && !opened" (click)="small && opened ? toggleAside() : undefined">
+      <div class="aside-inner-container">
+        <button *ngIf="small && opened" (click)="toggleAside()">chiudi</button>
+      </div>
+    </div>
+    <div class="content-container">
+      <div class="content-top-container">
+        <button *ngIf="small" (click)="toggleAside()">lista</button>
+      </div>
+      <div class="content-bottom-container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam luctus, erat id maximus aliquam, felis sapien consectetur enim, eget sollicitudin nunc nunc vel lorem. Sed porttitor ligula sit amet nunc dapibus, sit amet consequat metus dignissim. Aliquam consectetur magna augue, nec malesuada massa suscipit eu. Fusce accumsan aliquet bibendum. In vulputate, urna sit amet laoreet ullamcorper, est elit aliquam nisl, sit amet condimentum orci ligula non libero. Donec justo erat, fermentum vitae nulla sit amet, accumsan dapibus leo. Sed pellentesque, enim vitae imperdiet molestie, arcu tortor pellentesque elit, eu gravida ligula massa ac sapien. Sed facilisis ultrices enim quis venenatis. Nunc sed sollicitudin lacus. Integer placerat est non ligula condimentum suscipit. Ut eleifend eros neque, quis commodo ligula ullamcorper et. Curabitur consectetur at massa fermentum mollis. Nunc malesuada massa eu metus venenatis, lacinia consequat turpis laoreet. Integer placerat ut leo eget vehicula. Cras at turpis et leo lacinia gravida. Vestibulum pretium hendrerit ipsum, vel condimentum diam malesuada quis. Donec consectetur ut ex in scelerisque. In at lacus sed eros ullamcorper sollicitudin. Curabitur malesuada aliquet odio in dictum. Proin ac tortor nibh. Donec congue, elit eu cursus molestie, risus nunc dignissim velit, eu elementum mauris nulla at diam. Aliquam risus augue, mollis in lectus nec, semper semper tellus. Quisque ex velit, commodo vel elementum et, ultricies nec felis. Quisque imperdiet lectus a lacus sagittis euismod. Morbi quis bibendum urna. Curabitur in libero purus. Maecenas in convallis justo. In interdum justo at felis eleifend interdum. Cras eget nisl tempor, laoreet risus ac, porttitor elit. Proin nunc erat, eleifend a risus sit amet, feugiat fermentum nibh. Morbi id arcu ullamcorper, condimentum massa sed, lacinia diam. Aliquam eleifend ipsum ligula, id viverra ante pulvinar et. Phasellus ut ipsum non quam pharetra blandit. Cras ut mattis arcu, et tempus nisi. Quisque convallis cursus posuere. Phasellus sapien nisi, consectetur in pulvinar quis, varius scelerisque dui. Integer id imperdiet massa. Etiam scelerisque sed leo quis dictum. Nulla vel eros lacinia, blandit arcu laoreet, mollis enim. Morbi quis iaculis augue, quis congue dolor. Nulla semper nisl vitae ipsum dictum, vitae hendrerit eros feugiat. Maecenas aliquam ex vel massa gravida, accumsan tempus ipsum mollis. Morbi at justo risus. Pellentesque felis ligula, interdum nec urna nec, efficitur convallis nulla. Vestibulum posuere velit eu enim rhoncus dictum. Morbi a elit tincidunt, scelerisque tortor id, tincidunt lorem. Integer dolor massa, ullamcorper nec vestibulum in, malesuada vitae purus. Fusce maximus placerat diam at aliquam. Aenean nunc ligula, tempus ut risus in, pellentesque dictum sapien. Sed a lectus ut diam semper luctus id non turpis. Duis tempor, massa et commodo condimentum, nibh leo molestie urna, a faucibus diam ipsum ut metus. Mauris tempor ornare lacinia. Curabitur vel porta nibh, eget molestie magna. Morbi egestas non nulla sed vestibulum. Mauris pretium sem fringilla viverra pulvinar. Ut suscipit, sem a porttitor porta, ligula metus semper nunc, nec sodales eros tortor et augue. Nulla et consectetur urna. Pellentesque id diam massa. Nulla nec mi vitae metus varius commodo. Ut hendrerit, eros ut semper euismod, sapien est gravida risus, sit amet laoreet justo mauris quis elit. Sed ultricies elit id ultricies laoreet. Aliquam nunc est, viverra eget faucibus eget, pretium sed turpis. Nam in ligula at neque tincidunt convallis a nec ipsum. Nullam eget urna condimentum, rhoncus turpis et, lobortis lacus. Sed nunc nunc, vulputate a semper sed, suscipit at quam. Proin vitae ipsum id nibh bibendum pretium.</p>
+      </div>
+    </div>
+  <div>-->
+
+
+<div class="container"  [class.small-layout]="small">
+ <div class="aside-container" [class.aside-hidden]="small && !opened" (click)="small && opened ? toggleAside() : undefined">
+    <div class ="aside-inner-container">
         <div class="navbar">
-            <button mat-button  class="menu-button" (click)="onClick()">
+            <button mat-button  class="menu-button" (click)="toggleAside()">
                 <mat-icon class="icon" *ngIf="!small">person</mat-icon>
                 <mat-icon class="icon" *ngIf="small && opened">close</mat-icon>
             </button>
@@ -19,10 +38,12 @@
             </div>
         </div>
     </div>
+ </div>
+
     <div class="content">
         <div class="nav2">
             <div style="display:flex; align-items:center;justify-content:center; margin:10px; flex: 0 0 auto">
-                <button mat-mini-fab *ngIf="small && !opened" (click)="onClick()">
+                <button mat-mini-fab *ngIf="small && !opened" (click)="toggleAside()">
                     <mat-icon>
                         menu
                     </mat-icon>
@@ -74,39 +95,3 @@
 
 
 
-
-<!--<div class="overlay" [class.hide-aside-d]="!small || !opened" (click)="onClick()">
-<div class="nav-web">
-    <div class="navbar-web">
-        <h2>Truechat</h2>
-    </div>
-    <div class="tab-bar-web">TabBar</div>
-    <div class="content-list-web">
-        <div class="list-web">
-            <p>tor vitae, viverra ut nisi.
-
-                Maecenas tempus orci non purus varius, vitae sagittis massa dapibus. Interdum et malesuada fames ac
-                ante ipsum primis in faucibus. Proin dictum sollicitudin tortor, vitae feugiat enim volutpat
-                sagittis. Nullam placerat pretium odio eget lacinia. Etiam dictum lacus eget sagittis cursus. Morbi
-                euismod justo at est fringilla, quis suscipit lorem fringilla. Phasellus quis posuere nibh, vel
-                dictum velit. Phasellus vehicula enim non lacus euismod, et gravida arcu egestas. Phasellus mi
-                magna, posuere sed egestas at, venenatis eget nunc. Aenean pulvinar nisl a velit blandit tincidunt.
-                Curabitur eu fermentum tortor. Nulla facilisi. Curabitur vitae massa ac dolor feugiat dapibus sed
-                eget enim. Vivamus lacinia orci turpis, tempor porttitor nulla malesuada in. Integer semper neque at
-                pharetra interdum. In finibus enim condimentum purus interdum, vel dapibus risus efficitur.
-                Maecenas tempus orci non purus varius, vitae sagittis massa dapibus. Interdum et malesuada fames ac
-                ante ipsum primis in faucibus. Proin dictum sollicitudin tortor, vitae feugiat enim volutpat
-                sagittis. Nullam placerat pretium odio eget lacinia. Etiam dictum lacus eget sagittis cursus. Morbi
-                euismod justo at est fringilla, quis suscipit lorem fringilla. Phasellus quis posuere nibh, vel
-                dictum velit. Phasellus vehicula enim non lacus euismod, et gravida arcu egestas. Phasellus mi
-                magn</p>
-        </div>
-    </div>
-</div>
-</div>
-
-
- 
- <ng-template #xButton>
-    <button class="btn">X</button>
-</ng-template> -->
