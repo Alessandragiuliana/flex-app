@@ -1,46 +1,36 @@
 <div class="container">
-    <div  class="aside" [ngClass]="{'hide-aside':!opened && small, 'aside-n': small }">
+    <div class="aside" [ngClass]="{'hide-aside':!opened && small, 'aside-n': small }">
         <div class="navbar">
-            <button mat-button class="menu-button" (click)="onClick()">
+            <button mat-button  class="menu-button" (click)="onClick()">
                 <mat-icon class="icon" *ngIf="!small">person</mat-icon>
-                <mat-icon class="icon" *ngIf="small && !opened" >close</mat-icon>
+                <mat-icon class="icon" *ngIf="small && opened">close</mat-icon>
             </button>
-            <h2 class="title">Truechat</h2>
+                <h2 class="title">Truechat</h2>
             <img src="https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg" alt="">
         </div>
         <div class="tab-bar">
-           <input  class="input" type="text" placeholder="Search...">
+            <input class="input" type="text" placeholder="Search...">
         </div>
         <div class="content-list">
-            <div class="list">
-                <ol>
-                    <li>uno</li>
-                    <li>due</li>
-                    <li>tre</li>
-                    <li>quattro</li>
-                    <li>cinque</li>
-                    <li>sei</li>
-                    <li>sette</li>
-                    <li>otto</li>
-                    <li>quattro</li>
-                    <li>cinque</li>
-                    <li>sei</li>
-                    <li>sette</li>
-                    <li>otto</li>
-                </ol>
+            <div class="scroll">
+                <div *ngFor="let user of users">
+                    <app-user-list [user]="user"></app-user-list>
+                </div>
             </div>
         </div>
     </div>
     <div class="content">
         <div class="nav2">
-        <div style="display:flex; align-items:center;justify-content:center; margin:10px; flex: 0 0 auto" >
-            <button  mat-mini-fab *ngIf="small && !opened" (click)="onClick()">
-                <mat-icon  >
-                    menu
-                </mat-icon >        
-            </button> 
-        </div>
-            <div class="name"  [ngStyle]="{'font-style': small ? 'italic':'normal'} "> Alessandra Giuliana </div>
+            <div style="display:flex; align-items:center;justify-content:center; margin:10px; flex: 0 0 auto">
+                <button mat-mini-fab *ngIf="small && !opened" (click)="onClick()">
+                    <mat-icon>
+                        menu
+                    </mat-icon>
+                </button>
+            </div>
+            <div class="name" ><h2 >Alessandra Giuliana</h2>
+             <p>Active Now </p>
+            </div>
         </div>
 
         <div class="content-container">
@@ -81,6 +71,10 @@
         </div>
     </div>
 </div>
+
+
+
+
 <!--<div class="overlay" [class.hide-aside-d]="!small || !opened" (click)="onClick()">
 <div class="nav-web">
     <div class="navbar-web">
@@ -112,7 +106,7 @@
 </div>
 
 
-
+ 
  <ng-template #xButton>
     <button class="btn">X</button>
 </ng-template> -->

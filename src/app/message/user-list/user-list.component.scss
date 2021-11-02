@@ -1,0 +1,41 @@
+
+
+    .row{
+        display: flex;
+        padding: 5px;
+        flex:1 1 90px ;
+        align-items: center;
+       
+       
+        
+           
+        .col-1{  
+         flex: 0 0 auto;
+         margin-left: 10px;
+         margin-right: 10px ; 
+        }
+        .col-2{
+         flex-direction: column;
+         flex: 0 0 auto;
+         max-width: 100%;
+        
+          
+         h2{
+            margin: 0;
+            font-size: 14px;
+            
+         }
+        }
+     }
+     img{
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;        
+    }
+
+    .shadow{     
+     background-color: white;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+      }
+

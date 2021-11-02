@@ -7,7 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar'
 import {MatSidenavModule} from '@angular/material/sidenav'
 import {MatButtonModule} from '@angular/material/button';
-import { MessageModule } from './message/main/message.module';
+import { MessageModule } from './message/message.module';
+import { UserListComponent } from './message/user-list/user-list.component';
 
 
 @NgModule({

@@ -1,6 +1,8 @@
 import { BreakpointObserver, } from '@angular/cdk/layout';
 import { Component, OnDestroy,OnInit} from '@angular/core';
 import { Subscription } from 'rxjs';
+import { USERS } from '../mock-data';
+import { User } from '../user.model';
 
 @Component({
   selector: 'app-main',
@@ -8,7 +10,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit, OnDestroy {
-
+  public users: User[] = USERS.map(user => User.Build(user))
   private subscription: Subscription;
   showNavView : boolean = false;
   small: boolean = false;
