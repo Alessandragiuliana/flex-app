@@ -1,5 +1,5 @@
-import { Component,Input, OnInit } from '@angular/core';
-import { IMessage, Messager } from '../user.model';
+import { Component,Input, OnInit, } from '@angular/core';
+import { IUser, User, } from '../user.model';
 
 @Component({
   selector: 'app-user-message',
@@ -7,11 +7,12 @@ import { IMessage, Messager } from '../user.model';
   styleUrls: ['./user-message.component.scss']
 })
 export class UserMessageComponent implements OnInit {
-@Input() messager : Messager = Messager.Build({} as IMessage);
-
+  @Input() user: User = User.Build({}as IUser);
+  
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }

@@ -1,92 +1,165 @@
-import { IMessage, IUser } from "./user.model";
+import {  IUser } from "./user.model";
 
 export const USERS: IUser[] = [
 {
     name:"Pablo",
     surname:"Picasso",
-    imageUrl:"https://www.focus.it/images/2021/02/22/gatto_1020x680.jpg",
-    message:"Ciao come stai?"
+    imageUrl:"https://www.vivicreativo.com/wp-content/uploads/2015/09/picasso.jpg",
+    message:" Come stai?",
+    time:"7:00 PM",
+    iconMessage: true,
+    bodyMessages: [
+        {
+            id: 1,
+            times:"7:00 PM",
+            body: "Ciao",
+            me: true,
+        },
+        {
+            id: 2,
+            times:"7:00 PM",
+            body: "Buongiorno!!!!",
+            me: false,
+        },
+        {
+            id: 3,
+            times:"7:02 PM",
+            body: "Come va? ",
+            me: true,
+        },
+        {
+            id: 4,
+            times:"7:04 PM",
+            body: "Come stai? sono andato a fare la spesa ieri sera",
+            me: false,
+        },
+    ],
 },
 {
     name:"Claude",
     surname:"Monet",
-    imageUrl:"https://www.romatoday.it/~media/horizontal-hi/7834549861253/gatti-8.jpg",
-    message:"Sto tornando dalla Francia..."
+    imageUrl:"https://biografieonline.it/img/bio/Claude_Monet_1.jpg",
+    message:"Sto tornando dalla Francia...",
+    time:"5:00 PM",
+    iconMessage: false,
+    bodyMessages:[
+        {
+            id: 1,
+            times:"7:00 PM",
+            body: "Hello",
+            me: true,
+        },
+        {
+            id: 2,
+            times:"7:00 PM",
+            body: "How are you?",
+            me: false,
+        },
+        {
+            id: 3,
+            times:"7:02 PM",
+            body: "I'm fine thanks",
+            me: true,
+        },
+        {
+            id: 4,
+            times:"7:04 PM",
+            body: "Glad to hear that",
+            me: false,
+        },
+        {
+            id: 5,
+            times:"7:00 PM",
+            body: "Hello",
+            me: false,
+        },
+        {
+            id: 6,
+            times:"7:00 PM",
+            body: "How are you?",
+            me: false,
+        },
+        {
+            id: 7,
+            times:"7:02 PM",
+            body: "I'm fine thanks",
+            me: true,
+        },
+    ],
 },
 {
     name:"Paul",
     surname:"Cezanne",
-    imageUrl:"https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg",
-    message:"Hai visto il cesto di mele?"
+    imageUrl:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/C%C3%A9zanne_au_chapeau_melon%2C_par_Paul_C%C3%A9zanne%2C_esquisse%2C_York.jpg/220px-C%C3%A9zanne_au_chapeau_melon%2C_par_Paul_C%C3%A9zanne%2C_esquisse%2C_York.jpg",
+    message:"Hai visto il cesto di mele?",
+    time:"12:00 AM",
+    iconMessage: false,
+    bodyMessages: [
+        {
+            id: 1,
+            times:"7:00 PM",
+            body: "Ciao",
+            me: true,
+        },
+        {
+            id: 2,
+            times:"7:00 PM",
+            body: "Buongiorno!!!!",
+            me: false,
+        },
+        {
+            id: 3,
+            times:"7:02 PM",
+            body: "Come va? ",
+            me: true,
+        },
+        {
+            id: 4,
+            times:"7:04 PM",
+            body: "Come stai?",
+            me: false,
+        },
+    ],
 },
 {
     name:"Frida",
     surname:"Kahlo",
-    imageUrl:"https://www.focus.it/images/2021/02/22/gatto_1020x680.jpg",
-    message:"Ho rifatto le sopracciglia"
+    imageUrl:"https://www.occhi.it/wp-content/uploads/2020/02/dietro-la-copertina-frida.jpg",
+    message:"Ho rifatto le sopracciglia",
+    time:"2:00 PM",
+    iconMessage: true,
 },
 {
     name:"Edouard",
     surname:"Manet",
-    imageUrl:"https://www.romatoday.it/~media/horizontal-hi/7834549861253/gatti-8.jpg",
-    message:"Colazione sull'erba?"
+    imageUrl:"https://www.venividivici.us/wp-content/uploads/2018/04/Edouard-Manet-1832-1883.jpg",
+    message:"Colazione sull'erba?",
+    time:"3.32 PM",
+    iconMessage: true,
 },
 {
     name:"Pierre",
     surname:"Renoir",
-    imageUrl:"https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg",
-    message:"Bella Stoccolma"
+    imageUrl:"https://images.prismic.io/barnebys/05f4484e-304e-49b9-ba68-cf00667788f0_5d580674-c77a-4168-87fb-320ebab3b5b3_Pierre-Auguste_Renoir_-_Autoportrait__1875.jpg?w=900&auto=format%2Ccompress&cs=tinysrgb",
+    message:"Bella Stoccolma",
+    time:"12.32 PM",
+    iconMessage: false,
 },
 {
     name:"Pablo",
     surname:"Picasso",
-    imageUrl:"https://www.focus.it/images/2021/02/22/gatto_1020x680.jpg",
-    message:"Ciao come stai?"
+    imageUrl:"https://www.vivicreativo.com/wp-content/uploads/2015/09/picasso.jpg",
+    message:"Ciao come stai?",
+    time:"2:00 PM",
+    iconMessage: true,
 },
 {
     name:"Claude",
     surname:"Monet",
-    imageUrl:"https://www.romatoday.it/~media/horizontal-hi/7834549861253/gatti-8.jpg",
-    message:"Sto tornando dalla Francia..."
+    imageUrl:"https://biografieonline.it/img/bio/Claude_Monet_1.jpg",
+    message:"Sto tornando dalla Francia...",
+    time:"6:35 AM",
+    iconMessage: false,
 },
 
-]
-
-export const MESSAGE: IMessage[]= [
-{
-    imageUrl:"https://www.romatoday.it/~media/horizontal-hi/7834549861253/gatti-8.jpg" ,
-    message:"Hey there! Can you meet me today?",
-    imageUrlTwo:"https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg",
-    messageTwo:"Sure...when and where?"
-},
-{
-    imageUrl:"https://www.romatoday.it/~media/horizontal-hi/7834549861253/gatti-8.jpg" ,
-    message:"12 PM at the disco",
-    imageUrlTwo:"https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg",
-    messageTwo:"ok"
-},
-{
-    imageUrl:"https://www.romatoday.it/~media/horizontal-hi/7834549861253/gatti-8.jpg" ,
-    message:"Hey there! Can you meet me today?",
-    imageUrlTwo:"https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg",
-    messageTwo:"Sure...when and where?"
-},
-{
-    imageUrl:"https://www.romatoday.it/~media/horizontal-hi/7834549861253/gatti-8.jpg" ,
-    message:"12 PM at the disco",
-    imageUrlTwo:"https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg",
-    messageTwo:"ok"
-},
-{
-    imageUrl:"https://www.romatoday.it/~media/horizontal-hi/7834549861253/gatti-8.jpg" ,
-    message:"Hey there! Can you meet me today?",
-    imageUrlTwo:"https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg",
-    messageTwo:"Sure...when and where?",
-},
-{
-   imageUrl:"https://www.romatoday.it/~media/horizontal-hi/7834549861253/gatti-8.jpg" ,
-   message:"12 PM at the disco",
-   imageUrlTwo:"https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg",
-   messageTwo:"ok"
-},
 ]

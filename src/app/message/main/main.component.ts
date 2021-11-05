@@ -1,8 +1,9 @@
 import { BreakpointObserver, } from '@angular/cdk/layout';
 import { Component, OnDestroy,OnInit} from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { MESSAGE, USERS } from '../mock-data';
-import { Messager, User } from '../user.model';
+import {  USERS } from '../mock-data';
+import {  IUser, User } from '../user.model';
 
 @Component({
   selector: 'app-main',
@@ -11,15 +12,16 @@ import { Messager, User } from '../user.model';
 })
 
 export class MainComponent implements OnInit, OnDestroy {
-  public users: User[] = USERS.map(user => User.Build(user))
-  public messagers: Messager[] = MESSAGE.map(messager =>Messager.Build(messager))
+  public users: User[] = USERS.map(user => User.Build(user));
+  public selectedUser : User = User.Build({}as IUser);
   private querySubscription: Subscription;
-
+  conversation :any;
   small: boolean = false;
   opened: boolean = false;
-
+  searchText :any;
   screenQuery: string = '(max-width: 768px)';
-
+  
+  
 
   constructor( private observer: BreakpointObserver) {
     this.querySubscription = this.observer.observe(this.screenQuery).subscribe(
@@ -41,4 +43,11 @@ export class MainComponent implements OnInit, OnDestroy {
     this.opened = !this.opened;
   }
  
+  onClickSelected(): void{
+   this.conversation= !this.conversation;
+  }
+  
+ 
+
+  
 }

@@ -1,86 +1,51 @@
-.received-chats-img{
-        display: inline-block;
-        width: 20px;
-        float: left;
- }
+.container {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 30px 40px;
+  flex-wrap: wrap;
 
-img{
-    max-width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-.row{
+  .message {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #767676;
     display: flex;
-    justify-content: flex-end;
-    padding: 1rem;
-    flex:1 1 auto ;
-    align-items: center;
-  
-   
-    .col-1{  
-        flex: 0 0 auto;
-        margin-right: 20px ;    
-    }
-      .col-2{
-        flex: 1 1 auto;
-        max-width: 100%;
-
-        .received-msgg-inbox {
-            margin-left: 80px;
-            width: 400px;
-
-         p {
-            background: blue;
-            border-radius: 10px;
-            font-size: 14px;
-            margin: 0;
-            padding: 25px 10px 25px 22px;
-            width: 100%;
-            
-          }
-       }
-    }
-}  
-
-.row-2{
-        display: flex;
-        justify-content: flex-start;
-        padding: 1rem;
-        flex: 0 0 auto;
-        align-items: center;
-
-        
-        .col-4{
-            flex: 0 0 auto;
-        }
-        
-        
-        .col-3{  
-        flex: 1 1 auto;
-        max-width: 100%;
-
-    .outgoing-chats-msgg{
-        width: 400px;
-    
-         p{
-            background: green;
-            border-radius: 10px;
-            font-size: 14px;
-            margin: 0;
-            padding: 25px 10px 25px 22px;
-            width: 100%;
-            margin-top: 6px;
-        }
-        }
-    }
-} 
-.outgoing-chats-img{
-    display: inline;
-    
-}
-
-.chats-container{
-    display: flex;
+    flex: 0 0 auto;
+    align-items: flex-start;
     flex-direction: column;
+
+    .time {
+      text-align: right;
+      color: #cecece;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    img {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: -30px;
+      position: relative;
+      margin-left: -20px;
+    }
+    .message-content {
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 15px;
+      padding-left: 40px;
+      padding-right: 20px;
+      max-width: 350px;
+    }
+    &.me {
+      align-items: flex-end;
+      .message-content {
+        background-color: #dcf7c5;
+        padding-right: 60px;
+        padding-left: 20px;
+      }
+    }
+  }
+  
 }

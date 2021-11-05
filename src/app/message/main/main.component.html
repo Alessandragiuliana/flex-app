@@ -11,38 +11,67 @@
                 <img src="https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg" alt="">
             </div>
             <div class="tab-bar">
-                <input class="input" type="text" placeholder="Search...">
+                <img class="img-search" width="30px" src="../../../assets/search-icon.png" alt="">
+                <input [(ngModel)]="searchText" class="input" type="text" placeholder="Search...">
+                <button style="background-color:#dcf7c5;;margin-left: 3.5px; margin-right: 3.5px;" mat-mini-fab>
+                    <span class="material-icons">
+                        add
+                    </span>
+                </button>
             </div>
             <div class="content-list">
-                <div class="scroll" *ngFor="let user of users">
-                    <app-user-list [user]="user"></app-user-list>
+                <div *ngFor="let user of users | filter:searchText">
+                    <app-user-list (selectedUser)="selectedUser = $event; conversation=true" [user]="user">
+                    </app-user-list>
                 </div>
             </div>
         </div>
     </div>
 
 
+
     <div class="content">
-        <div class="nav2">
-            <div style="display:flex; align-items:center;justify-content:center; flex: 0 0 auto">
-                <button mat-mini-fab *ngIf="small && !opened" (click)="toggleAside()">
+        <div class="placeholder-container" *ngIf="!conversation">
+            <div class="chat-placeholder">
+                <img src="../../../assets/Schermata 2021-11-04 alle 17.30.33.png">
+                <h2>Mantieni il telefono connesso</h2>
+                <p>Alexapp si collega al tuo telefono per sincronizzare i messaggi.
+                    Per ridurre l'utilizzo <br> dei dati, collega il telefono al Wi-Fi.</p>
+                <div class="divider"></div>
+                <p> Chiama da Desktop con Alexapp da Windows <a href="#">Scaricalo da qui</a></p>
+            </div>
+        </div>
+        <div class="nav2"  *ngIf="conversation">
+            <div style="display:flex; flex: 0 0 auto; align-items: flex-start;">
+                <button class="button-conteiner" *ngIf="small && !opened" (click)="toggleAside()">
                     <mat-icon>
                         menu
                     </mat-icon>
                 </button>
             </div>
             <div class="name">
-                <h2>Alessandra Giuliana</h2>
+                Alessandra Giuliana
             </div>
+            <div class="icon-nav2">
+                <span class="material-icons">
+                    videocam
+                </span>
+                <span class="material-icons">
+                    phone_in_talk
+                </span>
+                <span class="material-icons">
+                    north_east
+                </span>
+            </div>
+
+
         </div>
 
-        <div class="content-container">
-                <div *ngFor="let messager of messagers">
-                    <app-user-message [messager]="messager"></app-user-message>
-                </div>
+        <div class="content-container" *ngIf="conversation">
+            <app-user-message [user]="selectedUser" *ngIf="conversation"></app-user-message>
         </div>
-        
-        <div class="footer">
+
+        <div class="footer" *ngIf="conversation">
             <button class="footer-btn">
                 <span class="material-icons">
                     sentiment_very_satisfied
@@ -58,12 +87,12 @@
                     add_photo_alternate
                 </span>
             </button>
-            <div class="footer-search">
-                <mat-form-field class="full-width " appearance="fill" style="width: 500px;">
-                    <mat-label>Type something</mat-label>
-                    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-                </mat-form-field>
+            <div class="text">
+                <textarea></textarea>
             </div>
+            <span class="material-icons sendIcon">
+                send
+            </span>
         </div>
     </div>
 </div>

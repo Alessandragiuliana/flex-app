@@ -1,29 +1,11 @@
-<div class="chats-container">
-    <div class="row">
-        <div class="col-1">
-            <div class="received-chats-img">
-                <img [src]="messager.imageUrl" alt="">
-            </div>
-            <div class="col-2">
-                <div class="received-msgg-inbox">
-                    <p>{{messager.message}}</p>
-                </div>
-            </div>
+<div class="container">
+    <div class="message" [ngClass] ="{me: message.me}" *ngFor="let message of user.bodyMessages">
+     <div><img [src]="user.imageUrl" alt=""></div>
+      <div class="message-content">
+        {{message.body}}
+        <div class="time">
+          {{message.times}}
         </div>
     </div>
-    <div class="row-2">
-        <div class="col-3">
-            <div class="outgoing-chats-msgg">
-                <p>{{messager.messageTwo}}</p>
-            </div>
-            <div class=".col-4">
-                <div class=".outgoing-chats-img" >
-                   
-                </div>
-            </div>
-        </div>
     </div>
 </div>
-
-
-

@@ -7,19 +7,27 @@ import { MatIconModule } from "@angular/material/icon";
 import { UserListComponent } from './user-list/user-list.component';
 import {MatInputModule} from '@angular/material/input';
 import { UserMessageComponent } from './user-message/user-message.component';
+import {MatDividerModule} from '@angular/material/divider';
+import { FormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 
 @NgModule({
     declarations: [
       MainComponent,
       UserListComponent,
-      UserMessageComponent
+      UserMessageComponent,
     ],
     imports: [
       CommonModule,
       LayoutModule,
       MatButtonModule,
       MatIconModule,
-      MatInputModule
+      MatInputModule,
+      MatDividerModule,
+      FormsModule,
+      BrowserModule,
+      Ng2SearchPipeModule  
     ],
     exports: [
       UserListComponent
