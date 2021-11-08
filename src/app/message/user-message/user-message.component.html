@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="message" [ngClass] ="{me: message.me}" *ngFor="let message of user.bodyMessages">
+    <div class="message"  [ngClass] ="{me: message.me}" *ngFor="let message of user.bodyMessages">
      <div><img [src]="user.imageUrl" alt=""></div>
       <div class="message-content">
         {{message.body}}

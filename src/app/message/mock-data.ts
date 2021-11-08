@@ -8,6 +8,7 @@ export const USERS: IUser[] = [
     message:" Come stai?",
     time:"7:00 PM",
     iconMessage: true,
+    online: true,
     bodyMessages: [
         {
             id: 1,
@@ -42,6 +43,7 @@ export const USERS: IUser[] = [
     message:"Sto tornando dalla Francia...",
     time:"5:00 PM",
     iconMessage: false,
+    online: false,
     bodyMessages:[
         {
             id: 1,
@@ -94,6 +96,7 @@ export const USERS: IUser[] = [
     message:"Hai visto il cesto di mele?",
     time:"12:00 AM",
     iconMessage: false,
+    online: false,
     bodyMessages: [
         {
             id: 1,
@@ -128,6 +131,7 @@ export const USERS: IUser[] = [
     message:"Ho rifatto le sopracciglia",
     time:"2:00 PM",
     iconMessage: true,
+    online: true,
 },
 {
     name:"Edouard",
@@ -136,6 +140,7 @@ export const USERS: IUser[] = [
     message:"Colazione sull'erba?",
     time:"3.32 PM",
     iconMessage: true,
+    online: true,
 },
 {
     name:"Pierre",
@@ -144,6 +149,7 @@ export const USERS: IUser[] = [
     message:"Bella Stoccolma",
     time:"12.32 PM",
     iconMessage: false,
+    online: false,
 },
 {
     name:"Pablo",
@@ -152,6 +158,7 @@ export const USERS: IUser[] = [
     message:"Ciao come stai?",
     time:"2:00 PM",
     iconMessage: true,
+    online: true,
 },
 {
     name:"Claude",
@@ -160,6 +167,7 @@ export const USERS: IUser[] = [
     message:"Sto tornando dalla Francia...",
     time:"6:35 AM",
     iconMessage: false,
+    online: false,
 },
 
 ]

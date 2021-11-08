@@ -5,6 +5,7 @@ export interface IUser{
     message : string;
     time: string;
     iconMessage: boolean;
+    online: boolean;
     bodyMessages?: IMessage[]; 
 }
 
@@ -23,6 +24,7 @@ export class User implements IUser{
         public imageUrl = "",
         public time ="",
         public iconMessage = false,
+        public online = false,
         public bodyMessages: IMessage[] = [],
     ) { }
     public static Build(user: IUser):User {
@@ -33,6 +35,7 @@ export class User implements IUser{
             user.imageUrl,
             user.time,
             user.iconMessage,
+            user.online,
             user.bodyMessages,
         );
     }

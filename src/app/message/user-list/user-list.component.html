@@ -1,5 +1,6 @@
-<div class="row" (click)="selectedUser.emit(user)">
+<div class="row active" (click)="selectedUser.emit(user)">
     <div class="col-1">
+        <div  [ngClass]="{green: user.online}"></div>
         <img [src]="user.imageUrl" alt="profile">
     </div>
     <div class="content">

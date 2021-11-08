@@ -13,7 +13,7 @@
             <div class="tab-bar">
                 <img class="img-search" width="30px" src="../../../assets/search-icon.png" alt="">
                 <input [(ngModel)]="searchText" class="input" type="text" placeholder="Search...">
-                <button style="background-color:#dcf7c5;;margin-left: 3.5px; margin-right: 3.5px;" mat-mini-fab>
+                <button style="background-color:#00af9c;;margin-left: 3.5px; margin-right: 3.5px;" mat-mini-fab>
                     <span class="material-icons">
                         add
                     </span>
@@ -32,6 +32,11 @@
 
     <div class="content">
         <div class="placeholder-container" *ngIf="!conversation">
+            <button class="button-conteiner" *ngIf="small && !opened" (click)="toggleAside()">
+                <mat-icon>
+                    menu
+                </mat-icon>
+            </button>
             <div class="chat-placeholder">
                 <img src="../../../assets/Schermata 2021-11-04 alle 17.30.33.png">
                 <h2>Mantieni il telefono connesso</h2>
@@ -41,30 +46,30 @@
                 <p> Chiama da Desktop con Alexapp da Windows <a href="#">Scaricalo da qui</a></p>
             </div>
         </div>
-        <div class="nav2"  *ngIf="conversation">
-            <div style="display:flex; flex: 0 0 auto; align-items: flex-start;">
-                <button class="button-conteiner" *ngIf="small && !opened" (click)="toggleAside()">
-                    <mat-icon>
-                        menu
-                    </mat-icon>
-                </button>
-            </div>
-            <div class="name">
-                Alessandra Giuliana
-            </div>
-            <div class="icon-nav2">
+        <div class="nav2" *ngIf="conversation">
+            <button class="button-conteiner" *ngIf="small && !opened" (click)="toggleAside()">
                 <span class="material-icons">
-                    videocam
+                    more_vert
                 </span>
-                <span class="material-icons">
-                    phone_in_talk
-                </span>
-                <span class="material-icons">
-                    north_east
-                </span>
+            </button>
+            <div class="nav2-content">
+                <div class="name" *ngIf="conversation">
+                    {{selectedUser.fullName}}
+                   <div class="green" [ngClass]="{online:!selectedUser.online}"><span></span> </div> 
+                   <div *ngIf="selectedUser.online" class=""><span></span> </div> 
+                </div>
+                <div class="icon-nav2">
+                    <span class="material-icons">
+                        videocam
+                    </span>
+                    <span class="material-icons">
+                        phone_in_talk
+                    </span>
+                    <span class="material-icons">
+                        north_east
+                    </span>
+                </div>
             </div>
-
-
         </div>
 
         <div class="content-container" *ngIf="conversation">
