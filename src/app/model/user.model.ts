@@ -1,4 +1,5 @@
 export interface IUser{
+    id : number;
     name : string;
     surname: string;
     imageUrl?:string;
@@ -6,7 +7,7 @@ export interface IUser{
     time: string;
     iconMessage: boolean;
     online: boolean;
-    bodyMessages?: IMessage[]; 
+    
 }
 
 export interface IMessage{
@@ -16,8 +17,27 @@ export interface IMessage{
     me: boolean;
 }
 
+export class Message implements IMessage{
+    private constructor(
+        public id = 0,
+        public times="",
+        public body="",
+        public me=false, 
+    ){}
+    public static Build(message: IMessage):Message{
+        return new this(
+        message.id,
+        message.times,
+        message.body,
+        message.me
+        
+   )}
+}
+
+
 export class User implements IUser{
     private constructor(
+        public id= 0,
         public name = "",
         public surname = "",
         public message = "",
@@ -25,10 +45,11 @@ export class User implements IUser{
         public time ="",
         public iconMessage = false,
         public online = false,
-        public bodyMessages: IMessage[] = [],
+        
     ) { }
     public static Build(user: IUser):User {
         return new this(
+            user.id,
             user.name,
             user.surname,
             user.message,
@@ -36,7 +57,7 @@ export class User implements IUser{
             user.time,
             user.iconMessage,
             user.online,
-            user.bodyMessages,
+           
         );
     }
     public get fullName(): string{

@@ -12,6 +12,8 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
 
+
+
 @NgModule({
     declarations: [
       MainComponent,
@@ -27,7 +29,8 @@ import { Ng2SearchPipeModule } from "ng2-search-filter";
       MatDividerModule,
       FormsModule,
       BrowserModule,
-      Ng2SearchPipeModule  
+      Ng2SearchPipeModule  ,
+
     ],
     exports: [
       UserListComponent

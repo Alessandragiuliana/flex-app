@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+  width: 1px;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -13,7 +17,6 @@
     flex: 0 0 290px;
     order: 1;
     height: 100%;
-    overflow: hidden;
 
     &.aside-hidden {
       display: none;
@@ -78,9 +81,8 @@
     }
     .content-list {
       height: 100%;
-      overflow: hidden;
-      overflow-y: auto;
       background-color: white;
+      overflow-y: auto;
     }
   }
   .content {
@@ -95,13 +97,13 @@
       flex-wrap: wrap;
       color: rgb(241 241 242 / 88%);
 
-      .button-conteiner{
+      .button-conteiner {
         background-color: #262d31;
         color: white;
         border: none;
         margin-top: 4px;
         position: absolute;
-        margin-top: 15px;      
+        margin-top: 15px;
       }
 
       .chat-placeholder {
@@ -112,13 +114,11 @@
         text-align: center;
         height: 100%;
         flex-wrap: wrap;
-        .start-container{
-
-      
-        img{
-          flex: 0 0 auto;
-        }
+        .start-container {
+          img {
+            flex: 0 0 auto;
           }
+        }
         .h2 {
           font-size: 35px;
           font-weight: normal;
@@ -140,7 +140,7 @@
       align-items: center;
       display: flex;
       flex-direction: row;
-      .nav2-content{
+      .nav2-content {
         display: flex;
         background-color: white;
         align-items: center;
@@ -153,37 +153,36 @@
           font-size: 20px;
           color: black;
           font-weight: 500;
-          font-size: 22px;           
-        
-        .green{
-          flex: 1 1 auto;
-          display: inline-block;
-          position: relative;
-          height: 8px;
-          width: 8px;
-          background-color:#00af9c;
-          border-radius: 50%;
-          margin-bottom: 3.2px;
-          margin-left: 5px;
+          font-size: 22px;
 
-          &.online{
-            background-color: rgba(0, 0, 0, 0.5);
+          .green {
+            flex: 1 1 auto;
+            display: inline-block;
+            position: relative;
+            height: 8px;
+            width: 8px;
+            background-color: #00af9c;
+            border-radius: 50%;
+            margin-bottom: 3.2px;
+            margin-left: 5px;
+
+            &.online {
+              background-color: rgba(0, 0, 0, 0.5);
+            }
+          }
+        }
+        .icon-nav2 {
+          flex: 0 0 auto;
+          cursor: pointer;
+          span {
+            padding: 15px;
           }
         }
       }
-      .icon-nav2 {   
-        flex: 0 0 auto;
-        cursor: pointer;
-        span {
-          padding: 15px;    
-        }    
-      }
-    }
 
       .button-conteiner {
         background-color: white;
         border: none;
-       
       }
     }
     .content-container {
@@ -194,6 +193,9 @@
       height: 100%;
       justify-content: flex-end;
       overflow: hidden;
+      app-user-message {
+        overflow-y: auto;
+      }
     }
 
     .footer {
@@ -207,30 +209,36 @@
         background-color: white;
         cursor: pointer;
         color: grey;
-        &:hover{
-          color: rgb(51,144,236);
-         }
-      }
-      .sendIcon {
-        color: grey;
-        padding: 15px;
-        cursor: pointer;
-        &:hover{
-         color: rgb(51,144,236);
+        &:hover {
+          color: rgb(51, 144, 236);
         }
       }
+    }
+    .form {
+      display: flex;
+      flex: 1 1 auto;
+      align-items: center;
       .text {
         display: flex;
         flex: 1 1 auto;
         text-align: center;
         textarea {
-          width: 100%;
+          margin-left: 20px;
+          margin-right: 20px;
           height: 30px;
           border-radius: 4px;
           outline: none;
           resize: none;
           box-sizing: border-box;
           padding: 6px;
+          width: 100%;
+        }
+      }
+      .sendIcon {
+        color: grey;
+        cursor: pointer;
+        &:hover {
+          color: rgb(51, 144, 236);
         }
       }
     }
@@ -250,6 +258,8 @@
   flex: 1 1 auto;
   z-index: 2;
   width: 240px;
+}
+.aside-inner-container {
   overflow: hidden;
 }
 

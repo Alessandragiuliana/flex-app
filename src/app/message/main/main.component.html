@@ -1,7 +1,7 @@
 <div class="container" [class.small-layout]="small">
     <div class="aside-container" [class.aside-hidden]="small && !opened"
         (click)="small && opened ? toggleAside() : undefined">
-        <div class="aside-inner-container">
+        <div class="aside-inner-container" >
             <div class="navbar">
                 <button mat-button class="menu-button" (click)="toggleAside()">
                     <mat-icon class="icon" *ngIf="!small">person</mat-icon>
@@ -19,9 +19,9 @@
                     </span>
                 </button>
             </div>
-            <div class="content-list">
-                <div *ngFor="let user of users | filter:searchText">
-                    <app-user-list (selectedUser)="selectedUser = $event; conversation=true" [user]="user">
+            <div class="content-list" >
+                <div *ngFor="let user of users | filter:searchText" [class.selected]="user === selectUsers">
+                    <app-user-list  (selectedUser)="selectedUser = $event; conversation=true" [user]="user">
                     </app-user-list>
                 </div>
             </div>
@@ -73,11 +73,11 @@
         </div>
 
         <div class="content-container" *ngIf="conversation">
-            <app-user-message [user]="selectedUser" *ngIf="conversation"></app-user-message>
+            <app-user-message  [user]="selectedUser" *ngIf="conversation"></app-user-message>
         </div>
 
         <div class="footer" *ngIf="conversation">
-            <button class="footer-btn">
+            <button class="footer-btn">  
                 <span class="material-icons">
                     sentiment_very_satisfied
                 </span>
@@ -92,12 +92,18 @@
                     add_photo_alternate
                 </span>
             </button>
+            <form action="" #f="ngForm"  class="form">
             <div class="text">
-                <textarea></textarea>
+                <textarea class="form-control"></textarea >
             </div>
+            <button class="footer-btn" type="submit"  >
             <span class="material-icons sendIcon">
                 send
             </span>
+        </button>
+        </form>
         </div>
     </div>
 </div>
+
+<!--(ngSubmit)="messageService.clear()"-->

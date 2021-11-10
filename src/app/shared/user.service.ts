@@ -1,7 +1,14 @@
-import {  IUser } from "./user.model";
+import { Injectable } from '@angular/core';
+import { IUser } from '../model/user.model';
+import { Observable, of } from 'rxjs';
 
-export const USERS: IUser[] = [
-{
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
+users : IUser[]=[
+  {
+    id:1,
     name:"Pablo",
     surname:"Picasso",
     imageUrl:"https://www.vivicreativo.com/wp-content/uploads/2015/09/picasso.jpg",
@@ -9,34 +16,8 @@ export const USERS: IUser[] = [
     time:"7:00 PM",
     iconMessage: true,
     online: true,
-    bodyMessages: [
-        {
-            id: 1,
-            times:"7:00 PM",
-            body: "Ciao",
-            me: true,
-        },
-        {
-            id: 2,
-            times:"7:00 PM",
-            body: "Buongiorno!!!!",
-            me: false,
-        },
-        {
-            id: 3,
-            times:"7:02 PM",
-            body: "Come va? ",
-            me: true,
-        },
-        {
-            id: 4,
-            times:"7:04 PM",
-            body: "Come stai? sono andato a fare la spesa ieri sera",
-            me: false,
-        },
-    ],
 },
-{
+{   id:2,
     name:"Claude",
     surname:"Monet",
     imageUrl:"https://biografieonline.it/img/bio/Claude_Monet_1.jpg",
@@ -44,87 +25,19 @@ export const USERS: IUser[] = [
     time:"5:00 PM",
     iconMessage: false,
     online: false,
-    bodyMessages:[
-        {
-            id: 1,
-            times:"7:00 PM",
-            body: "Hello",
-            me: true,
-        },
-        {
-            id: 2,
-            times:"7:00 PM",
-            body: "How are you?",
-            me: false,
-        },
-        {
-            id: 3,
-            times:"7:02 PM",
-            body: "I'm fine thanks",
-            me: true,
-        },
-        {
-            id: 4,
-            times:"7:04 PM",
-            body: "Glad to hear that",
-            me: false,
-        },
-        {
-            id: 5,
-            times:"7:00 PM",
-            body: "Hello",
-            me: false,
-        },
-        {
-            id: 6,
-            times:"7:00 PM",
-            body: "How are you?",
-            me: false,
-        },
-        {
-            id: 7,
-            times:"7:02 PM",
-            body: "I'm fine thanks",
-            me: true,
-        },
-    ],
 },
 {
+    id:3,
     name:"Paul",
     surname:"Cezanne",
     imageUrl:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/C%C3%A9zanne_au_chapeau_melon%2C_par_Paul_C%C3%A9zanne%2C_esquisse%2C_York.jpg/220px-C%C3%A9zanne_au_chapeau_melon%2C_par_Paul_C%C3%A9zanne%2C_esquisse%2C_York.jpg",
     message:"Hai visto il cesto di mele?",
     time:"12:00 AM",
     iconMessage: false,
-    online: false,
-    bodyMessages: [
-        {
-            id: 1,
-            times:"7:00 PM",
-            body: "Ciao",
-            me: true,
-        },
-        {
-            id: 2,
-            times:"7:00 PM",
-            body: "Buongiorno!!!!",
-            me: false,
-        },
-        {
-            id: 3,
-            times:"7:02 PM",
-            body: "Come va? ",
-            me: true,
-        },
-        {
-            id: 4,
-            times:"7:04 PM",
-            body: "Come stai?",
-            me: false,
-        },
-    ],
+    online: false, 
 },
-{
+{   
+    id:4,
     name:"Frida",
     surname:"Kahlo",
     imageUrl:"https://www.occhi.it/wp-content/uploads/2020/02/dietro-la-copertina-frida.jpg",
@@ -134,6 +47,7 @@ export const USERS: IUser[] = [
     online: true,
 },
 {
+    id:5,
     name:"Edouard",
     surname:"Manet",
     imageUrl:"https://www.venividivici.us/wp-content/uploads/2018/04/Edouard-Manet-1832-1883.jpg",
@@ -143,6 +57,7 @@ export const USERS: IUser[] = [
     online: true,
 },
 {
+    id:6,
     name:"Pierre",
     surname:"Renoir",
     imageUrl:"https://images.prismic.io/barnebys/05f4484e-304e-49b9-ba68-cf00667788f0_5d580674-c77a-4168-87fb-320ebab3b5b3_Pierre-Auguste_Renoir_-_Autoportrait__1875.jpg?w=900&auto=format%2Ccompress&cs=tinysrgb",
@@ -152,6 +67,7 @@ export const USERS: IUser[] = [
     online: false,
 },
 {
+    id:7,
     name:"Pablo",
     surname:"Picasso",
     imageUrl:"https://www.vivicreativo.com/wp-content/uploads/2015/09/picasso.jpg",
@@ -161,6 +77,7 @@ export const USERS: IUser[] = [
     online: true,
 },
 {
+    id:8,
     name:"Claude",
     surname:"Monet",
     imageUrl:"https://biografieonline.it/img/bio/Claude_Monet_1.jpg",
@@ -171,3 +88,13 @@ export const USERS: IUser[] = [
 },
 
 ]
+getUsers(): Observable<IUser[]> {
+  return of (this.users);
+}
+
+login(mes:string){
+  console.log("users-service", mes);
+}
+
+  constructor() { }
+}
