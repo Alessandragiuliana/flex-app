@@ -51,5 +51,5 @@ export class ChatService {
     this.chat = [];
   }
 
-
 }
+
