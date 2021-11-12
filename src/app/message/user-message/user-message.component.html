@@ -1,7 +1,8 @@
 
 <div class="container">
   <div class="message" [ngClass]="{me: chat.me}" *ngFor="let chat of chat">
-    <div><img [src]="user.imageUrl" alt=""></div>
+    <div><img  *ngIf="!chat.me"  [src]="user.imageUrl" alt=""></div>
+    <div><img *ngIf="chat.me" src="https://www.larcadinoepetshop.it/wp-content/uploads/2019/03/articolo-gatto.jpg" alt=""></div>
     <div class="message-content">
       {{chat.body}}
       <div class="time">

@@ -1,3 +1,4 @@
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Component,Input, OnInit, } from '@angular/core';
 import { ChatService } from 'src/app/shared/chat.service';
 import {  IMessage, IUser, User, } from '../../model/user.model';
@@ -9,17 +10,15 @@ import {  IMessage, IUser, User, } from '../../model/user.model';
   providers: [ChatService]
 })
 export class UserMessageComponent implements OnInit {
-  
   @Input() user: User = User.Build({}as IUser);
-  chat : IMessage[]=[];
-  
-  
+  chat: IMessage[]=[];
   constructor(private chatService: ChatService) { 
-
+  
   }  
 
   ngOnInit(): void {
     this.getChat();
+
   }
 
   getChat(): void {

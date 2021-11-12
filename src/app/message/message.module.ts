@@ -11,6 +11,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from '../in-memory-data.service';
 
 
 
@@ -19,6 +22,7 @@ import { Ng2SearchPipeModule } from "ng2-search-filter";
       MainComponent,
       UserListComponent,
       UserMessageComponent,
+      
     ],
     imports: [
       CommonModule,
@@ -29,9 +33,12 @@ import { Ng2SearchPipeModule } from "ng2-search-filter";
       MatDividerModule,
       FormsModule,
       BrowserModule,
-      Ng2SearchPipeModule  ,
-
-    ],
+      Ng2SearchPipeModule ,
+      HttpClientModule ,
+      HttpClientInMemoryWebApiModule.forRoot(
+        InMemoryDataService, { dataEncapsulation: false }
+      )
+ ],
     exports: [
       UserListComponent
     ]
